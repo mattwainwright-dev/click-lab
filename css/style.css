@@ -112,3 +112,10 @@ footer a:hover {
   text-shadow: 0 0 6px cyan, 0 0 12px cyan;
   font-weight: bold;
 }
+
+.correct-answer {
+  background: cyan;
+  color: black;
+  border-color: cyan;
+  box-shadow: 0 0 16px cyan;
+}

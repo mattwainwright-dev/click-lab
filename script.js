@@ -22,6 +22,7 @@ let feedback3 = document.getElementById("feedback-3");
 
 answer1.addEventListener("click", function () {
     feedback.textContent = "Correct!";
+    answer1.classList.add("correct-answer");
 
     if (answeredCorrectly === false) {
     score = score + 1;
@@ -44,6 +45,8 @@ answer4.addEventListener("click", function() {
 
 answer5.addEventListener("click", function() {
     feedback2.textContent = "Correct!";
+    answer5.classList.add("correct-answer");
+
     if (answeredCorrectly2 === false) {
         score = score + 1;
         scoreText.textContent = "Score: " + score;
@@ -61,6 +64,8 @@ answer7.addEventListener("click", function() {
 
 answer8.addEventListener("click", function() {
     feedback3.textContent = "Correct!";
+    answer8.classList.add("correct-answer");
+
     if (answeredCorrectly3 === false) {
         score = score + 1;
         scoreText.textContent = "Score: " + score;
