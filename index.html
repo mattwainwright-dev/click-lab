@@ -2,67 +2,89 @@
 <html>
     <head>
         <title>Pulse Quiz</title>
-    <link rel="icon" type="image/png" href="pulse-hero-transparent-fixed.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.classless.min.css">
-    <link rel="stylesheet" href="css/card.css">
-    <link rel="stylesheet" href="css/choice-list.css">
-    <link rel="stylesheet" href="css/sticky-bar.css">
-    <link rel="stylesheet" href="css/alert.css">
-    <link rel="stylesheet" href="css/style.css">  
+
+        <!-- Pulse favicon -->
+        <link rel="icon" type="image/png" href="pulse-hero-transparent-fixed.png">
+
+        <!-- Pico CSS framework -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.classless.min.css">
+
+        <!-- Quiz CSS components -->
+        <link rel="stylesheet" href="css/card.css">
+        <link rel="stylesheet" href="css/choice-list.css">
+        <link rel="stylesheet" href="css/sticky-bar.css">
+        <link rel="stylesheet" href="css/alert.css">
+
+        <!-- Custom Pulse styling -->
+        <link rel="stylesheet" href="css/style.css">
     </head>
+
     <body>
+
+        <!-- Pulse branding and quiz introduction -->
         <img class="pulse-hero" src="pulse-hero-transparent-fixed.png" alt="Pulse">
-        <h1 id="headline-1"> Pulse Quiz </h1>
-        <p id="tagline-1"> How well do you know the music? </p>
+        <h1 id="headline-1">Pulse Quiz</h1>
+        <p id="tagline-1">How well do you know the music?</p>
 
-        <p id="score-text" class="sticky-bar">Score: 0</p> 
-    <div class="card" id="question-card-1">
-      <p id="question-1">Which band released "The Summoning"?</p>
+        <!-- Running quiz score -->
+        <p id="score-text" class="sticky-bar">Score: 0</p>
 
-      
+        <!-- Question 1 -->
+        <div class="card" id="question-card-1">
+            <p id="question-1">Which band released "The Summoning"?</p>
 
-      <button id="hint-button">Hint</button>
-      <p id="hint-text"></p>
+            <button id="hint-button">Hint</button>
+            <p id="hint-text"></p>
 
-      <div class="choice-list">
-        <button id="answer-1">Sleep Token</button>
-        <button id="answer-2">Deftones</button>
-        <button id="answer-3">Bad Omens</button>
-      </div>
+            <div class="choice-list">
+                <button id="answer-1">Sleep Token</button>
+                <button id="answer-2">Deftones</button>
+                <button id="answer-3">Bad Omens</button>
+            </div>
 
-      <p id="feedback-1" class="alert"></p>
-    </div>
+            <p id="feedback-1" class="alert"></p>
+        </div>
 
-    <div class="card" id="question-card-2">
-    <p>Which band released "Knife Prty"?</p>
+        <!-- Question 2 -->
+        <div class="card" id="question-card-2">
+            <p>Which band released "Knife Prty"?</p>
 
-    <div class="choice-list">
-        <button id="answer-4">Sleep Token</button>
-        <button id="answer-5">Deftones</button>
-        <button id="answer-6">Bad Omens</button>
-    </div>
+            <div class="choice-list">
+                <button id="answer-4">Sleep Token</button>
+                <button id="answer-5">Deftones</button>
+                <button id="answer-6">Bad Omens</button>
+            </div>
 
-    <p id="feedback-2" class="alert"></p>
-</div>
+            <p id="feedback-2" class="alert"></p>
+        </div>
 
-<div class="card" id="question-card-3">
-    <p>Which band released "Impose"?</p>
+        <!-- Question 3 -->
+        <div class="card" id="question-card-3">
+            <p>Which band released "Impose"?</p>
 
-    <div class="choice-list">
-        <button id="answer-7">Deftones</button>
-        <button id="answer-8">Bad Omens</button>
-        <button id="answer-9">Sleep Token</button>
-    </div>
-    <p id="feedback-3" class="alert"></p>
-</div>
+            <div class="choice-list">
+                <button id="answer-7">Deftones</button>
+                <button id="answer-8">Bad Omens</button>
+                <button id="answer-9">Sleep Token</button>
+            </div>
+
+            <p id="feedback-3" class="alert"></p>
+        </div>
+
+        <!-- Reset the quiz and play again -->
         <button id="start-over">Start Over</button>
-<footer>
-    <p>
-        Created by Matthew Wainwright, 2026
-        <a href="https://github.com/mattwainwright-dev" target="_blank">GitHub</a>
-    </p>
-    <p class="mftp">🤘 MFTP 🫶</p>
-</footer>
+
+        <!-- Creator information -->
+        <footer>
+            <p>
+                Created by Matthew Wainwright, 2026
+                <a href="https://github.com/mattwainwright-dev" target="_blank">GitHub</a>
+            </p>
+
+            <p class="mftp">🤘 MFTP 🫶</p>
+        </footer>
+
+        <!-- Quiz JavaScript -->
         <script src="script.js"></script>
     </body>
 </html>

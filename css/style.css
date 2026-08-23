@@ -1,121 +1,126 @@
+/* Main page and Pulse particle background */
 body {
     background-color: black;
+    background-image: url("../pulse-particles-bg.png");
+    background-repeat: repeat-y;
+    background-position: top center;
+    background-size: 100% auto;
     color: white;
     padding: 30px;
 }
 
+/* Main paragraph text */
 p {
     font-size: 22px;
 }
 
+/* Pulse hero image */
+.pulse-hero {
+    display: block;
+    width: min(900px, 100%);
+    margin: 0 auto;
+}
+
+/* Quiz question cards */
+.card {
+    background: black;
+    border: 1px solid cyan;
+    border-radius: 0;
+    box-shadow: 0 0 12px cyan;
+}
+
+/* Quiz buttons */
 button {
     margin: 8px;
     padding: 10px 16px;
-    border: 4px solid cyan;
+    background: black;
+    color: cyan;
+    border: 1px solid cyan;
     border-radius: 6px;
+    box-shadow: 0 0 8px cyan;
 }
 
-.card {
-    border-radius: 0;
-}
-
-body {
-  background-color: black;
-  background-image: url("../pulse-particles-bg.png");
-  background-repeat: repeat-y;
-  background-position: top center;
-  background-size: 100% auto;
-}
-
-.pulse-hero {
-  display: block;
-  width: min(900px, 100%);
-  margin: 0 auto;
-}
-
-.card {
-  background: black;
-  border: 1px solid cyan;
-  box-shadow: 0 0 12px cyan;
-}
-
-button {
-  background: black;
-  color: cyan;
-  border: 1px solid cyan;
-  box-shadow: 0 0 8px cyan;
-}
-
+/* Reverse button colors when hovered */
 button:hover {
-  background: cyan;
-  color: black;
-  border-color: cyan;
-  box-shadow: 0 0 16px cyan;
+    background: cyan;
+    color: black;
+    border-color: cyan;
+    box-shadow: 0 0 16px cyan;
 }
 
+/* Give buttons a pressed effect */
 button:active {
-  background: cyan;
-  color: black;
-  box-shadow: 0 0 20px cyan;
-  transform: scale(0.98);
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 20px cyan;
+    transform: scale(0.98);
 }
 
+/* Pulse Quiz heading */
 #headline-1 {
-  color: cyan;
-  text-shadow: 0 0 8px cyan, 0 0 16px cyan;
+    color: cyan;
+    text-shadow: 0 0 8px cyan, 0 0 16px cyan;
 }
 
+/* Quiz tagline */
 #tagline-1 {
-  color: white;
-  text-shadow: 0 0 6px cyan;
+    color: white;
+    text-shadow: 0 0 6px cyan;
 }
 
+/* Score bar that stays visible while scrolling */
 .sticky-bar {
-  background: black;
-  color: cyan;
-  border: 1px solid cyan;
-  box-shadow: 0 0 8px cyan;
+    background: black;
+    color: cyan;
+    border: 1px solid cyan;
+    box-shadow: 0 0 8px cyan;
 }
 
+/* Answer feedback box */
 .alert {
-  background: black;
-  color: white;
-  border: 1px solid cyan;
-  box-shadow: 0 0 8px cyan;
+    background: black;
+    color: white;
+    border: 1px solid cyan;
+    box-shadow: 0 0 8px cyan;
 }
 
+/* Hide feedback box until there is feedback */
 .alert:empty {
-  display: none;
+    display: none;
 }
 
+/* Highlight correct answers after they are selected */
+.correct-answer {
+    background: cyan;
+    color: black;
+    border-color: cyan;
+    box-shadow: 0 0 16px cyan;
+}
+
+/* Footer and creator information */
 footer {
-  text-align: center;
-  color: white;
+    text-align: center;
+    color: white;
 }
 
 footer a {
-  color: cyan;
-  text-shadow: 0 0 6px cyan;
+    color: cyan;
+    text-shadow: 0 0 6px cyan;
 }
 
+/* Stronger glow on GitHub link hover */
 footer a:hover {
-  color: cyan;
-  text-shadow:
-    0 0 6px cyan,
-    0 0 12px cyan,
-    0 0 20px cyan;
+    color: cyan;
+    text-shadow:
+        0 0 6px cyan,
+        0 0 12px cyan,
+        0 0 20px cyan;
     font-weight: bold;
 }
 
+/* Music For The People signature */
 .mftp {
-  color: cyan;
-  text-shadow: 0 0 6px cyan, 0 0 12px cyan;
-  font-weight: bold;
-}
-
-.correct-answer {
-  background: cyan;
-  color: black;
-  border-color: cyan;
-  box-shadow: 0 0 16px cyan;
+    color: cyan;
+    text-shadow: 0 0 6px cyan, 0 0 12px cyan;
+    font-weight: bold;
 }

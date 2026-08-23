@@ -1,4 +1,6 @@
+// Get quiz elements from the HTML
 let headline = document.getElementById("headline-1");
+
 let answer1 = document.getElementById("answer-1");
 let answer2 = document.getElementById("answer-2");
 let answer3 = document.getElementById("answer-3");
@@ -8,35 +10,44 @@ let answer6 = document.getElementById("answer-6");
 let answer7 = document.getElementById("answer-7");
 let answer8 = document.getElementById("answer-8");
 let answer9 = document.getElementById("answer-9");
+
 let questionCard1 = document.getElementById("question-card-1");
 let questionCard2 = document.getElementById("question-card-2");
 let questionCard3 = document.getElementById("question-card-3");
+
+// Start the quiz with only Question 1 visible
 questionCard2.style.display = "none";
 questionCard3.style.display = "none";
+
 let hintButton = document.getElementById("hint-button");
 let hintText = document.getElementById("hint-text");
-let score = 0;
+
 let scoreText = document.getElementById("score-text");
 let startOver = document.getElementById("start-over");
-let answeredCorrectly = false;
-let answeredCorrectly2 = false;
-let answeredCorrectly3 = false;
 
 let feedback = document.getElementById("feedback-1");
 let feedback2 = document.getElementById("feedback-2");
 let feedback3 = document.getElementById("feedback-3");
 
+// Track the score and whether each question was answered correctly
+let score = 0;
+let answeredCorrectly = false;
+let answeredCorrectly2 = false;
+let answeredCorrectly3 = false;
+
+// Question 1 answer buttons
 answer1.addEventListener("click", function () {
     feedback.textContent = "Correct!";
     answer1.classList.add("correct-answer");
 
     if (answeredCorrectly === false) {
-    score = score + 1;
-    scoreText.textContent = "Score: " + score;
-    answeredCorrectly = true;
+        score = score + 1;
+        scoreText.textContent = "Score: " + score;
+        answeredCorrectly = true;
     }
+
     questionCard1.style.display = "none";
-    questionCard2.style.display = "block";   
+    questionCard2.style.display = "block";
 });
 
 answer2.addEventListener("click", function() {
@@ -51,6 +62,7 @@ answer3.addEventListener("click", function() {
     questionCard2.style.display = "block";
 });
 
+// Question 2 answer buttons
 answer4.addEventListener("click", function() {
     feedback2.textContent = "Not this one!";
     questionCard2.style.display = "none";
@@ -66,8 +78,9 @@ answer5.addEventListener("click", function() {
         scoreText.textContent = "Score: " + score;
         answeredCorrectly2 = true;
     }
+
     questionCard2.style.display = "none";
-    questionCard3.style.display = "block";   
+    questionCard3.style.display = "block";
 });
 
 answer6.addEventListener("click", function() {
@@ -76,6 +89,7 @@ answer6.addEventListener("click", function() {
     questionCard3.style.display = "block";
 });
 
+// Question 3 answer buttons
 answer7.addEventListener("click", function() {
     feedback3.textContent = "Not this one!";
 });
@@ -95,10 +109,12 @@ answer9.addEventListener("click", function() {
     feedback3.textContent = "Nope — try again!";
 });
 
+// Show a hint for Question 1
 hintButton.addEventListener("click", function () {
     hintText.textContent = "Think about the band that released Take Me Back to Eden.";
 });
 
+// Reset the quiz so the user can play again
 startOver.addEventListener("click", function() {
     score = 0;
     scoreText.textContent = "Score: " + score;
@@ -120,9 +136,7 @@ startOver.addEventListener("click", function() {
     questionCard3.style.display = "none";
 
     window.scrollTo({
-    top: 0,
-    behavior: "smooth"
+        top: 0,
+        behavior: "smooth"
+    });
 });
-});
-
-
