@@ -18,3 +18,97 @@ button {
 .card {
     border-radius: 0;
 }
+
+body {
+  background-color: black;
+  background-image: url("../pulse-particles-bg.png");
+  background-repeat: repeat-y;
+  background-position: top center;
+  background-size: 100% auto;
+}
+
+.pulse-hero {
+  display: block;
+  width: min(900px, 100%);
+  margin: 0 auto;
+}
+
+.card {
+  background: black;
+  border: 1px solid cyan;
+  box-shadow: 0 0 12px cyan;
+}
+
+button {
+  background: black;
+  color: cyan;
+  border: 1px solid cyan;
+  box-shadow: 0 0 8px cyan;
+}
+
+button:hover {
+  background: cyan;
+  color: black;
+  border-color: cyan;
+  box-shadow: 0 0 16px cyan;
+}
+
+button:active {
+  background: cyan;
+  color: black;
+  box-shadow: 0 0 20px cyan;
+  transform: scale(0.98);
+}
+
+#headline-1 {
+  color: cyan;
+  text-shadow: 0 0 8px cyan, 0 0 16px cyan;
+}
+
+#tagline-1 {
+  color: white;
+  text-shadow: 0 0 6px cyan;
+}
+
+.sticky-bar {
+  background: black;
+  color: cyan;
+  border: 1px solid cyan;
+  box-shadow: 0 0 8px cyan;
+}
+
+.alert {
+  background: black;
+  color: white;
+  border: 1px solid cyan;
+  box-shadow: 0 0 8px cyan;
+}
+
+.alert:empty {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  color: white;
+}
+
+footer a {
+  color: cyan;
+  text-shadow: 0 0 6px cyan;
+}
+
+footer a:hover {
+  color: cyan;
+  text-shadow:
+    0 0 6px cyan,
+    0 0 12px cyan,
+    0 0 20px cyan;
+    font-weight: bold;
+}
+
+.mftp {
+  color: cyan;
+  text-shadow: 0 0 6px cyan, 0 0 12px cyan;
+  font-weight: bold;
+}

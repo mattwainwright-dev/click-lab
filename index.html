@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Quiz</title>
+        <title>Pulse Quiz</title>
+    <link rel="icon" type="image/png" href="pulse-hero-transparent-fixed.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.classless.min.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/choice-list.css">
@@ -10,8 +11,9 @@
     <link rel="stylesheet" href="css/style.css">  
     </head>
     <body>
-        <h1 id="headline-1"> My Quiz </h1>
-        <p id="tagline-1"> Take the quiz </p>
+        <img class="pulse-hero" src="pulse-hero-transparent-fixed.png" alt="Pulse">
+        <h1 id="headline-1"> Pulse Quiz </h1>
+        <p id="tagline-1"> How well do you know the music? </p>
 
         <p id="score-text" class="sticky-bar">Score: 0</p> 
     <div class="card">
@@ -32,24 +34,34 @@
     </div>
 
     <div class="card">
-    <p>Which band released "Knife Party"?</p>
+    <p>Which band released "Knife Prty"?</p>
 
     <div class="choice-list">
-        <button>Sleep Token</button>
-        <button>Deftones</button>
-        <button>Bad Omens</button>
+        <button id="answer-4">Sleep Token</button>
+        <button id="answer-5">Deftones</button>
+        <button id="answer-6">Bad Omens</button>
     </div>
+
+    <p id="feedback-2" class="alert"></p>
 </div>
 
 <div class="card">
     <p>Which band released "Impose"?</p>
 
     <div class="choice-list">
-        <button>Deftones</button>
-        <button>Bad Omens</button>
-        <button>Sleep Token</button>
+        <button id="answer-7">Deftones</button>
+        <button id="answer-8">Bad Omens</button>
+        <button id="answer-9">Sleep Token</button>
     </div>
+    <p id="feedback-3" class="alert"></p>
 </div>
+<footer>
+    <p>
+        Created by Matthew Wainwright, 2026
+        <a href="https://github.com/mattwainwright-dev" target="_blank">GitHub</a>
+    </p>
+    <p class="mftp">🤘 MFTP 🫶</p>
+</footer>
         <script src="script.js"></script>
     </body>
 </html>
