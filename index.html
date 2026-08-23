@@ -5,16 +5,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.classless.min.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/choice-list.css">
+    <link rel="stylesheet" href="css/sticky-bar.css">
+    <link rel="stylesheet" href="css/alert.css">
     <link rel="stylesheet" href="css/style.css">  
     </head>
     <body>
         <h1 id="headline-1"> My Quiz </h1>
         <p id="tagline-1"> Take the quiz </p>
 
+        <p id="score-text" class="sticky-bar">Score: 0</p> 
     <div class="card">
       <p id="question-1">Which band released "The Summoning"?</p>
 
-      <p id="score-text">Score: 0</p>
+      
 
       <button id="hint-button">Hint</button>
       <p id="hint-text"></p>
@@ -25,7 +28,7 @@
         <button id="answer-3">Bad Omens</button>
       </div>
 
-      <p id="feedback-1"></p>
+      <p id="feedback-1" class="alert"></p>
     </div>
 
     <div class="card">

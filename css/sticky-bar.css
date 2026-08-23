@@ -1,0 +1,9 @@
+.sticky-bar {
+  position: sticky;
+  top: 0;
+  background-color: var(--pico-background-color, #ffffff);
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--pico-muted-border-color, #e7eaf0);
+  font-weight: bold;
+  z-index: 10;
+}
