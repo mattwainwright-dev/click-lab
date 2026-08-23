@@ -8,10 +8,16 @@ let answer6 = document.getElementById("answer-6");
 let answer7 = document.getElementById("answer-7");
 let answer8 = document.getElementById("answer-8");
 let answer9 = document.getElementById("answer-9");
+let questionCard1 = document.getElementById("question-card-1");
+let questionCard2 = document.getElementById("question-card-2");
+let questionCard3 = document.getElementById("question-card-3");
+questionCard2.style.display = "none";
+questionCard3.style.display = "none";
 let hintButton = document.getElementById("hint-button");
 let hintText = document.getElementById("hint-text");
 let score = 0;
 let scoreText = document.getElementById("score-text");
+let startOver = document.getElementById("start-over");
 let answeredCorrectly = false;
 let answeredCorrectly2 = false;
 let answeredCorrectly3 = false;
@@ -29,18 +35,26 @@ answer1.addEventListener("click", function () {
     scoreText.textContent = "Score: " + score;
     answeredCorrectly = true;
     }
+    questionCard1.style.display = "none";
+    questionCard2.style.display = "block";   
 });
 
 answer2.addEventListener("click", function() {
     feedback.textContent = "Nope — try again!";
+    questionCard1.style.display = "none";
+    questionCard2.style.display = "block";
 });
 
 answer3.addEventListener("click", function() {
     feedback.textContent = "Not this one!";
+    questionCard1.style.display = "none";
+    questionCard2.style.display = "block";
 });
 
 answer4.addEventListener("click", function() {
     feedback2.textContent = "Not this one!";
+    questionCard2.style.display = "none";
+    questionCard3.style.display = "block";
 });
 
 answer5.addEventListener("click", function() {
@@ -52,10 +66,14 @@ answer5.addEventListener("click", function() {
         scoreText.textContent = "Score: " + score;
         answeredCorrectly2 = true;
     }
+    questionCard2.style.display = "none";
+    questionCard3.style.display = "block";   
 });
 
 answer6.addEventListener("click", function() {
     feedback2.textContent = "Nope — try again!";
+    questionCard2.style.display = "none";
+    questionCard3.style.display = "block";
 });
 
 answer7.addEventListener("click", function() {
@@ -80,3 +98,31 @@ answer9.addEventListener("click", function() {
 hintButton.addEventListener("click", function () {
     hintText.textContent = "Think about the band that released Take Me Back to Eden.";
 });
+
+startOver.addEventListener("click", function() {
+    score = 0;
+    scoreText.textContent = "Score: " + score;
+
+    answeredCorrectly = false;
+    answeredCorrectly2 = false;
+    answeredCorrectly3 = false;
+
+    feedback.textContent = "";
+    feedback2.textContent = "";
+    feedback3.textContent = "";
+
+    answer1.classList.remove("correct-answer");
+    answer5.classList.remove("correct-answer");
+    answer8.classList.remove("correct-answer");
+
+    questionCard1.style.display = "block";
+    questionCard2.style.display = "none";
+    questionCard3.style.display = "none";
+
+    window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+});
+});
+
+
