@@ -2,23 +2,51 @@
 <html>
     <head>
         <title>Quiz</title>
-        <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.1.1/css/pico.classless.min.css">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/choice-list.css">
+    <link rel="stylesheet" href="css/style.css">  
     </head>
     <body>
         <h1 id="headline-1"> My Quiz </h1>
         <p id="tagline-1"> Take the quiz </p>
 
-        <p id="question-1">Which band released "The Summoning"?</p>
-        <p id="score-text">Score: 0</p>
+    <div class="card">
+      <p id="question-1">Which band released "The Summoning"?</p>
 
-        <button id="hint-button">Hint</button>
-        <p id="hint-text"></p>
+      <p id="score-text">Score: 0</p>
 
+      <button id="hint-button">Hint</button>
+      <p id="hint-text"></p>
+
+      <div class="choice-list">
         <button id="answer-1">Sleep Token</button>
         <button id="answer-2">Deftones</button>
         <button id="answer-3">Bad Omens</button>
+      </div>
 
-        <p id="feedback-1"></p>
+      <p id="feedback-1"></p>
+    </div>
+
+    <div class="card">
+    <p>Which band released "Knife Party"?</p>
+
+    <div class="choice-list">
+        <button>Sleep Token</button>
+        <button>Deftones</button>
+        <button>Bad Omens</button>
+    </div>
+</div>
+
+<div class="card">
+    <p>Which band released "Impose"?</p>
+
+    <div class="choice-list">
+        <button>Deftones</button>
+        <button>Bad Omens</button>
+        <button>Sleep Token</button>
+    </div>
+</div>
         <script src="script.js"></script>
     </body>
 </html>
