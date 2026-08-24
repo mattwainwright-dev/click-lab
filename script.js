@@ -14,10 +14,12 @@ let answer9 = document.getElementById("answer-9");
 let questionCard1 = document.getElementById("question-card-1");
 let questionCard2 = document.getElementById("question-card-2");
 let questionCard3 = document.getElementById("question-card-3");
+let questionCard4 = document.getElementById("question-card-4");
 
 // Start the quiz with only Question 1 visible
 questionCard2.style.display = "none";
 questionCard3.style.display = "none";
+questionCard4.style.display = "none";
 
 let hintButton = document.getElementById("hint-button");
 let hintText = document.getElementById("hint-text");
@@ -29,11 +31,16 @@ let feedback = document.getElementById("feedback-1");
 let feedback2 = document.getElementById("feedback-2");
 let feedback3 = document.getElementById("feedback-3");
 
+let answer10 = document.getElementById("answer-10");
+let answer11 = document.getElementById("answer-11");
+let feedback4 = document.getElementById("feedback-4");
+
 // Track the score and whether each question was answered correctly
 let score = 0;
 let answeredCorrectly = false;
 let answeredCorrectly2 = false;
 let answeredCorrectly3 = false;
+let answeredBonus = false;
 
 // Question 1 answer buttons
 answer1.addEventListener("click", function () {
@@ -92,6 +99,8 @@ answer6.addEventListener("click", function() {
 // Question 3 answer buttons
 answer7.addEventListener("click", function() {
     feedback3.textContent = "Not this one!";
+    questionCard3.style.display = "none";
+    questionCard4.style.display = "block";
 });
 
 answer8.addEventListener("click", function() {
@@ -103,10 +112,31 @@ answer8.addEventListener("click", function() {
         scoreText.textContent = "Score: " + score;
         answeredCorrectly3 = true;
     }
+    questionCard3.style.display = "none";
+    questionCard4.style.display = "block";
 });
 
 answer9.addEventListener("click", function() {
     feedback3.textContent = "Nope — try again!";
+   questionCard3.style.display = "none";
+   questionCard4.style.display = "block"; 
+});
+
+// Bonus True/False question
+answer10.addEventListener("click", function() {
+    feedback4.textContent = 'Nope! The official title is "Knife Prty."';
+    answeredBonus = true;
+});
+
+answer11.addEventListener("click", function() {
+    feedback4.textContent = 'Correct! The official title is "Knife Prty."';
+    answer11.classList.add("correct-answer");
+
+    if (answeredBonus === false) {
+        score = score + 1;
+        scoreText.textContent = "Score: " + score;
+        answeredBonus = true;
+    }
 });
 
 // Show a hint for Question 1
@@ -122,18 +152,22 @@ startOver.addEventListener("click", function() {
     answeredCorrectly = false;
     answeredCorrectly2 = false;
     answeredCorrectly3 = false;
+    answeredBonus = false;
 
     feedback.textContent = "";
     feedback2.textContent = "";
     feedback3.textContent = "";
+    feedback4.textContent = "";
 
     answer1.classList.remove("correct-answer");
     answer5.classList.remove("correct-answer");
     answer8.classList.remove("correct-answer");
+    answer11.classList.remove("correct-answer");
 
     questionCard1.style.display = "block";
     questionCard2.style.display = "none";
     questionCard3.style.display = "none";
+    questionCard4.style.display = "none";
 
     window.scrollTo({
         top: 0,
