@@ -102,6 +102,8 @@ answer7.addEventListener("click", function() {
     feedback3.textContent = "Not this one!";
     questionCard3.style.display = "none";
     questionCard4.style.display = "block";
+    knifePrtyClip.currentTime = 0;
+    knifePrtyClip.play();
 });
 
 answer8.addEventListener("click", function() {
@@ -113,14 +115,19 @@ answer8.addEventListener("click", function() {
         scoreText.textContent = "Score: " + score;
         answeredCorrectly3 = true;
     }
+
     questionCard3.style.display = "none";
     questionCard4.style.display = "block";
+    knifePrtyClip.currentTime = 0;
+    knifePrtyClip.play();
 });
 
 answer9.addEventListener("click", function() {
     feedback3.textContent = "Nope — try again!";
    questionCard3.style.display = "none";
    questionCard4.style.display = "block"; 
+   knifePrtyClip.currentTime = 0;
+   knifePrtyClip.play();
 });
 
 // Bonus True/False question
@@ -137,8 +144,6 @@ answer11.addEventListener("click", function() {
         score = score + 1;
         scoreText.textContent = "Score: " + score;
         answeredBonus = true;
-        knifePrtyClip.currentTime = 0;
-        knifePrtyClip.play();
     }
 });
 
