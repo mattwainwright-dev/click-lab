@@ -56,6 +56,14 @@ button:active {
     transform: scale(0.98);
 }
 
+/* Show which question the user is currently on */
+.question-number {
+    color: cyan;
+    font-weight: bold;
+    text-shadow: 0 0 6px cyan;
+    margin-bottom: 6px;
+}
+
 /* Pulse Quiz heading */
 #headline-1 {
     color: cyan;
