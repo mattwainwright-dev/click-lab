@@ -34,6 +34,7 @@ let feedback3 = document.getElementById("feedback-3");
 let answer10 = document.getElementById("answer-10");
 let answer11 = document.getElementById("answer-11");
 let feedback4 = document.getElementById("feedback-4");
+let knifePrtyClip = new Audio("knife-prty-clip.mp4");
 
 // Track the score and whether each question was answered correctly
 let score = 0;
@@ -136,6 +137,8 @@ answer11.addEventListener("click", function() {
         score = score + 1;
         scoreText.textContent = "Score: " + score;
         answeredBonus = true;
+        knifePrtyClip.currentTime = 0;
+        knifePrtyClip.play();
     }
 });
 
@@ -168,6 +171,8 @@ startOver.addEventListener("click", function() {
     questionCard2.style.display = "none";
     questionCard3.style.display = "none";
     questionCard4.style.display = "none";
+    knifePrtyClip.pause();
+    knifePrtyClip.currentTime = 0;
 
     window.scrollTo({
         top: 0,
