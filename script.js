@@ -20,7 +20,6 @@ let questionCard4 = document.getElementById("question-card-4");
 questionCard2.style.display = "none";
 questionCard3.style.display = "none";
 questionCard4.style.display = "none";
-
 let hintButton = document.getElementById("hint-button");
 let hintText = document.getElementById("hint-text");
 
@@ -35,6 +34,7 @@ let answer10 = document.getElementById("answer-10");
 let answer11 = document.getElementById("answer-11");
 let feedback4 = document.getElementById("feedback-4");
 let knifePrtyClip = new Audio("knife-prty-clip.mp4");
+knifePrtyClip.volume = 0.35;
 
 // Track the score and whether each question was answered correctly
 let score = 0;
