@@ -1,15 +1,15 @@
 // Get quiz elements from the HTML
 let headline = document.getElementById("headline-1");
 
-let answer1 = document.getElementById("answer-1");
-let answer2 = document.getElementById("answer-2");
-let answer3 = document.getElementById("answer-3");
-let answer4 = document.getElementById("answer-4");
-let answer5 = document.getElementById("answer-5");
-let answer6 = document.getElementById("answer-6");
-let answer7 = document.getElementById("answer-7");
-let answer8 = document.getElementById("answer-8");
-let answer9 = document.getElementById("answer-9");
+let answer1 = document.getElementById("q1-a1");
+let answer2 = document.getElementById("q1-a2");
+let answer3 = document.getElementById("q1-a3");
+let answer4 = document.getElementById("q2-a1");
+let answer5 = document.getElementById("q2-a2");
+let answer6 = document.getElementById("q2-a3");
+let answer7 = document.getElementById("q3-a1");
+let answer8 = document.getElementById("q3-a2");
+let answer9 = document.getElementById("q3-a3");
 
 let questionCard1 = document.getElementById("question-card-1");
 let questionCard2 = document.getElementById("question-card-2");
@@ -26,9 +26,9 @@ let hintText = document.getElementById("hint-text");
 let scoreText = document.getElementById("score-text");
 let startOver = document.getElementById("start-over");
 
-let feedback = document.getElementById("feedback-1");
-let feedback2 = document.getElementById("feedback-2");
-let feedback3 = document.getElementById("feedback-3");
+let feedback = document.getElementById("q1-feedback");
+let feedback2 = document.getElementById("q2-feedback");
+let feedback3 = document.getElementById("q3-feedback");
 
 let answer10 = document.getElementById("answer-10");
 let answer11 = document.getElementById("answer-11");
@@ -43,92 +43,118 @@ let answeredCorrectly2 = false;
 let answeredCorrectly3 = false;
 let answeredBonus = false;
 
-// Question 1 answer buttons
-answer1.addEventListener("click", function () {
-    feedback.textContent = "Correct!";
-    answer1.classList.add("correct-answer");
+let questionSet = [
+  {
+    prompt: 'Which band released "The Summoning"?',
+    answers: ["Sleep Token", "Deftones", "Bad Omens"],
+    correctAnswer: "Sleep Token"
+  },
+  {
+    prompt: 'Which band released "Knife Prty"?',
+    answers: ["Sleep Token", "Deftones", "Bad Omens"],
+    correctAnswer: "Deftones"
+  },
+  {
+    prompt: 'Which band released "Impose"?',
+    answers: ["Deftones", "Bad Omens", "Sleep Token"],
+    correctAnswer: "Bad Omens"
+  }
+];
 
-    if (answeredCorrectly === false) {
+function checkAnswer(button, question) {
+  if (button.value === question.correctAnswer) {
+    return "Correct!";
+  } else {
+    return "Not that one - the answer is " + question.correctAnswer + ".";
+  }
+}
+
+let number = 0;
+
+questionSet.forEach(function (question) {
+  number = number + 1;
+  let questionNumber = number;
+
+  let prompt = document.getElementById("q" + number + "-prompt");
+  let button1 = document.getElementById("q" + number + "-a1");
+  let button2 = document.getElementById("q" + number + "-a2");
+  let button3 = document.getElementById("q" + number + "-a3");
+  let questionFeedback = document.getElementById(
+    "q" + number + "-feedback"
+  );
+
+  prompt.textContent = question.prompt;
+
+  button1.textContent = question.answers[0];
+  button1.value = question.answers[0];
+
+  button2.textContent = question.answers[1];
+  button2.value = question.answers[1];
+
+  button3.textContent = question.answers[2];
+  button3.value = question.answers[2];
+
+  function handleAnswer(button) {
+    questionFeedback.textContent = checkAnswer(button, question);
+
+    if (button.value === question.correctAnswer) {
+      button.classList.add("correct-answer");
+
+      if (questionNumber === 1 && answeredCorrectly === false) {
         score = score + 1;
-        scoreText.textContent = "Score: " + score;
         answeredCorrectly = true;
-    }
+      }
 
-    questionCard1.style.display = "none";
-    questionCard2.style.display = "block";
-});
-
-answer2.addEventListener("click", function() {
-    feedback.textContent = "Nope — try again!";
-    questionCard1.style.display = "none";
-    questionCard2.style.display = "block";
-});
-
-answer3.addEventListener("click", function() {
-    feedback.textContent = "Not this one!";
-    questionCard1.style.display = "none";
-    questionCard2.style.display = "block";
-});
-
-// Question 2 answer buttons
-answer4.addEventListener("click", function() {
-    feedback2.textContent = "Not this one!";
-    questionCard2.style.display = "none";
-    questionCard3.style.display = "block";
-});
-
-answer5.addEventListener("click", function() {
-    feedback2.textContent = "Correct!";
-    answer5.classList.add("correct-answer");
-
-    if (answeredCorrectly2 === false) {
+      if (questionNumber === 2 && answeredCorrectly2 === false) {
         score = score + 1;
-        scoreText.textContent = "Score: " + score;
         answeredCorrectly2 = true;
-    }
+      }
 
-    questionCard2.style.display = "none";
-    questionCard3.style.display = "block";
-});
-
-answer6.addEventListener("click", function() {
-    feedback2.textContent = "Nope — try again!";
-    questionCard2.style.display = "none";
-    questionCard3.style.display = "block";
-});
-
-// Question 3 answer buttons
-answer7.addEventListener("click", function() {
-    feedback3.textContent = "Not this one!";
-    questionCard3.style.display = "none";
-    questionCard4.style.display = "block";
-    knifePrtyClip.currentTime = 0;
-    knifePrtyClip.play();
-});
-
-answer8.addEventListener("click", function() {
-    feedback3.textContent = "Correct!";
-    answer8.classList.add("correct-answer");
-
-    if (answeredCorrectly3 === false) {
+      if (questionNumber === 3 && answeredCorrectly3 === false) {
         score = score + 1;
-        scoreText.textContent = "Score: " + score;
         answeredCorrectly3 = true;
+      }
+
+      scoreText.textContent = "Score: " + score;
     }
 
-    questionCard3.style.display = "none";
-    questionCard4.style.display = "block";
-    knifePrtyClip.currentTime = 0;
-    knifePrtyClip.play();
+    if (questionNumber === 1) {
+      questionCard1.style.display = "none";
+      questionCard2.style.display = "block";
+    }
+
+    if (questionNumber === 2) {
+      questionCard2.style.display = "none";
+      questionCard3.style.display = "block";
+    }
+
+    if (questionNumber === 3) {
+      questionCard3.style.display = "none";
+      questionCard4.style.display = "block";
+      knifePrtyClip.currentTime = 0;
+      knifePrtyClip.play();
+    }
+  }
+
+  button1.addEventListener("click", function () {
+    handleAnswer(button1);
+  });
+
+  button2.addEventListener("click", function () {
+    handleAnswer(button2);
+  });
+
+  button3.addEventListener("click", function () {
+    handleAnswer(button3);
+  });
 });
 
-answer9.addEventListener("click", function() {
-    feedback3.textContent = "Nope — try again!";
-   questionCard3.style.display = "none";
-   questionCard4.style.display = "block"; 
-   knifePrtyClip.currentTime = 0;
-   knifePrtyClip.play();
-});
+
+  
+
+
+
+
 
 // Bonus True/False question
 answer10.addEventListener("click", function() {
